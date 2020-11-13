@@ -1,0 +1,159 @@
+:root {
+	--bg-black: #24292e;
+	--border-light: #e1e4e8;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+		sans-serif, Apple Color Emoji, Segoe UI Emoji;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.navbar {
+	padding: 1rem 2rem;
+	background-color: var(--bg-black);
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.navbar .flex {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav .flex {
+	justify-content: flex-start;
+}
+
+.logo i {
+	font-size: 2rem;
+}
+
+.navbar a {
+	color: #fff;
+}
+
+.form-control {
+	display: inline-block;
+	height: 28px;
+}
+
+form.search-profile.grid {
+	grid-template-columns: 8fr 1fr;
+	gap: 0;
+	border: solid 1px #e1e4e849;
+	border-radius: 6px;
+}
+
+.search-profile input {
+	width: 100%;
+	height: 100%;
+	padding: 0 12px;
+	background: inherit;
+	border: none;
+	outline: none;
+	color: #fff;
+	line-height: 1.5;
+}
+.search-profile input::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+.search-profile input::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.search-profile input::-webkit-search-decoration,
+.search-profile input::-webkit-search-cancel-button,
+.search-profile input::-webkit-search-results-button,
+.search-profile input::-webkit-search-results-decoration {
+	display: none;
+}
+
+.fa-slash {
+	font-size: 0.6rem;
+	border: solid 1px #e1e4e849;
+	padding: 4px;
+	margin-right: 8px;
+	border-radius: 5px;
+	display: inline-block;
+	transform: rotate(90deg);
+	color: #e1e4e849;
+}
+
+.user__icons .far,
+.user__icons .fas {
+	font-size: 1rem;
+}
+
+.bell {
+	position: relative;
+}
+
+.bell::after {
+	display: block;
+	position: absolute;
+	content: "";
+	background-image: linear-gradient(#54a3ff, #006eed);
+	width: 10px;
+	height: 10px;
+	top: -3px;
+	right: -3px;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+.tab-row {
+	width: 100%;
+	height: auto;
+	margin-top: 24px;
+	font-size: 14px;
+	border-bottom: solid 1px #eaecef;
+}
+
+.tab-row .grid {
+	grid-template-columns: 1fr 3fr;
+}
+
+.tab-row .flex {
+	justify-content: flex-start;
+}
+
+.tab {
+	position: relative;
+	line-height: 2rem;
+	padding: 8px 16px;
+}
+
+.tabs .flex {
+	align-items: center;
+}
+
+svg {
+	fill: gray;
+}
+
+span {
+	margin-left: 10px;
+}
