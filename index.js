@@ -43,7 +43,7 @@ function fetchBio(query) {
 		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
 		{
 			method: "POST",
-			headers,
+			headers: headers,
 			body: JSON.stringify({
 				query: query,
 			}),
@@ -56,7 +56,7 @@ function fetchRepo(query) {
 		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
 		{
 			method: "POST",
-			headers,
+			headers: headers,
 			body: JSON.stringify({
 				query: query,
 			}),
