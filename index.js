@@ -14,6 +14,16 @@
 
 /* Bio */
 
+const githubData = {
+	token: "a354d8dce38074390368313f68b4e7b23c3ecbe6",
+	username: "johannesPhil",
+};
+
+const headers = {
+	"Content-Type": "application/json",
+	Authentication: "bearer " + githubData.token,
+};
+
 fetchBio(`
     query{
       user(login: "johannesPhil") {
@@ -26,9 +36,9 @@ fetchBio(`
 });
 
 function fetchBio(query) {
-	return fetch("https://developer.github.com/v4/explorer/", {
+	return fetch("http://developer.github.com/v4/explorer", {
 		method: "POST",
-		headers: { "Content-Type": "application/json" },
+		headers: headers,
 		body: JSON.stringify({
 			query: query,
 		}),
