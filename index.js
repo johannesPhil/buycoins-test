@@ -40,7 +40,7 @@ fetchRepo(`
 
 function fetchBio(query) {
 	return fetch(
-		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
+		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4",
 		{
 			method: "POST",
 			headers: headers,
@@ -53,7 +53,7 @@ function fetchBio(query) {
 
 function fetchRepo(query) {
 	return fetch(
-		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
+		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4",
 		{
 			method: "POST",
 			headers: headers,
