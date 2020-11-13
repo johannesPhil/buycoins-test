@@ -15,7 +15,7 @@
 /* Bio */
 
 const githubData = {
-	token: "a354d8dce38074390368313f68b4e7b23c3ecbe6",
+	token: "e081de9e17491a3fb7002f6f78b69da61b3fa3e5",
 	username: "johannesPhil",
 };
 
@@ -36,9 +36,9 @@ fetchBio(`
 });
 
 function fetchBio(query) {
-	return fetch("https://api.github.com/graphql", {
+	return fetch("https://developer.github.com/v4/explorer", {
 		method: "POST",
-		headers: headers,
+		headers,
 		body: JSON.stringify({
 			query: query,
 		}),
