@@ -8,7 +8,6 @@ const githubData = {
 
 const headers = {
 	"Content-Type": "application/json",
-	Authentication: "bearer " + githubData.token,
 };
 
 fetchBio(`
@@ -43,10 +42,10 @@ function fetchBio(query) {
 	return fetch(
 		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
 		{
-			method: "GET",
+			method: "POST",
 			headers,
 			body: JSON.stringify({
-				query,
+				query: query,
 			}),
 		}
 	).then((result) => result.json());
@@ -56,10 +55,10 @@ function fetchRepo(query) {
 	return fetch(
 		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
 		{
-			method: "GET",
+			method: "POST",
 			headers,
 			body: JSON.stringify({
-				query,
+				query: query,
 			}),
 		}
 	).then((result) => result.json());
