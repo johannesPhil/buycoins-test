@@ -26,7 +26,7 @@ const headers = {
 
 fetchBio(`
     query{
-      user(login: "johannesPhil") {
+      user(login: ${githubData.username}) {
         bio
         name
       }
