@@ -41,7 +41,7 @@ fetchRepo(`
 
 function fetchBio(query) {
 	return fetch(
-		"https://stormy-forest-36871.herokuapp.com/https://developer.github.com/v4/explorer",
+		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
 		{
 			method: "POST",
 			headers,
@@ -54,7 +54,7 @@ function fetchBio(query) {
 
 function fetchRepo(query) {
 	return fetch(
-		"https://guarded-escarpment-08871.herokuapp.com/https://developer.github.com/v4/explorer",
+		"https://cors-anywhere.herokuapp.com/https://developer.github.com/v4/explorer",
 		{
 			method: "POST",
 			headers,
