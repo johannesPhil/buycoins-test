@@ -36,7 +36,7 @@ fetchBio(`
 });
 
 function fetchBio(query) {
-	return fetch("http://developer.github.com/v4/explorer", {
+	return fetch("httpsgu://developer.github.com/v4/explorer", {
 		method: "POST",
 		headers: headers,
 		body: JSON.stringify({
