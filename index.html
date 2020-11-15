@@ -17,13 +17,13 @@
 		<!--Navbar-->
 
 		<div class="navbar">
-			<div class="flex">
+			<div class="desk flex">
 				<div class="nav">
 					<div class="flex">
 						<div class="logo mr-2">
 							<i class="fab fa-github fa-2x"></i>
 						</div>
-						<form action="" method="post" class="search-profile grid">
+						<form action="" method="post" class="search-profile mr-1 flex">
 							<div class="form-control">
 								<input
 									type="search"
@@ -34,27 +34,75 @@
 							</div>
 							<i class="fas fa-slash"></i>
 						</form>
-						<ul class="flex">
-							<li><a href="" class="mx-1">Pull Requests</a></li>
-							<li><a href="" class="mx-1">Issues</a></li>
-							<li><a href="" class="mx-1">Market Place</a></li>
-							<li><a href="" class="mx-1">Explore</a></li>
+						<ul class="links flex">
+							<li class="mr-1">
+								<a href="" class="long">Pull Requests</a>
+								<a href="" class="short">Pulls</a>
+							</li>
+							<li class="mr-1"><a href="">Issues</a></li>
+							<li class="mr-1"><a href="">Marketplace</a></li>
+							<li class="mr-1"><a href="">Explore</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="user">
 					<div class="user__icons flex">
-						<div class="mx-1">
-							<i class="far fa-bell bell mx-1"> </i>
+						<div class="mr-1">
+							<i class="far fa-bell bell"> </i>
 						</div>
-						<div class="mx-1">
+						<div class="mr-1 pos-rel">
 							<i class="fas fa-plus"></i>
 							<i class="fas fa-caret-down"></i>
 						</div>
-						<div class="mx-1">
-							<i class="fas fa-user mx-1"></i>
+						<div class="user__profile">
+							<img src="" alt="" />
 						</div>
 					</div>
+				</div>
+				<div class="mobile-navbar pos-abs">
+					<div class="top-nav flex">
+						<div class="mobile-menu">
+							<i class="fas fa-bars fa-2x"></i>
+						</div>
+						<div class="mobile-menu-c">
+							<i class="fas fa-bars fa-2x"></i>
+						</div>
+						<div class="">
+							<i class="fab fa-github fa-2x"></i>
+						</div>
+						<div class="">
+							<i class="far fa-bell bell"> </i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-links-container">
+			<div class="mobile-links pos-rel flex">
+				<div class="link-holder">
+					<form action="" method="post" class="search-profile flex">
+						<div class="form-control">
+							<input
+								type="search"
+								name="repo"
+								id="repo"
+								placeholder="Search or jump to..."
+							/>
+						</div>
+						<i class="fas fa-slash"></i>
+					</form>
+				</div>
+				<div class="link-holder"><p>Pull Requests</p></div>
+				<div class="link-holder"><p>Issues</p></div>
+				<div class="link-holder"><p>Marketplpce</p></div>
+				<div class="link-holder"><p>Explore</p></div>
+				<div class="link-holder flex">
+					<img src="" alt="" />
+					<span>johannesPhil</span>
+				</div>
+				<div class="link-holder">
+					<i class="fas fa-sign-out-alt"></i>
+					<span>Sign Out</span>
 				</div>
 			</div>
 		</div>
@@ -135,9 +183,14 @@
 				<div class="profile__bio">
 					<div class="bio__avi">
 						<img src="" alt="profile picture" />
+						<div class="set_status">
+							<i class="far fa-smile"></i>
+						</div>
 					</div>
-					<h2 class="bio__name"></h2>
-					<h4 class="bio__username"></h4>
+					<div>
+						<h2 class="bio__name"></h2>
+						<h3 class="bio__username"></h3>
+					</div>
 					<p class="bio__about"></p>
 				</div>
 				<div class="profile__repositories"></div>

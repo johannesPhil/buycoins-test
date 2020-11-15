@@ -5,6 +5,14 @@
 	padding: 0 40px;
 }
 
+.pos-abs {
+	position: absolute;
+}
+
+.pos-rel {
+	position: relative;
+}
+
 /*Margin*/
 .my-1 {
 	margin: 1rem 0;
