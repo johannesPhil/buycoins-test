@@ -5,6 +5,7 @@ let img = document.getElementsByTagName("img"),
 	bars = document.querySelector(".mobile-menu"),
 	closeMenu = document.querySelector(".mobile-menu-c"),
 	mobileMenu = document.querySelector(".mobile-links-container"),
+	mobileUsername = document.querySelector(".username"),
 	linkHolder = document.querySelectorAll(".link-holder"),
 	repos = document.querySelector(".profile__repositories");
 
@@ -23,7 +24,7 @@ closeMenu.addEventListener("click", () => {
 
 const githubData = {
 	token1: "387090f7cfc221a015ceff8b8636dbb26035044b",
-	token2: "a8f63e110153dd076e2d54b9d44187ca7be9c7ee",
+	token2: "fd7f88bb20bd508c78fa2ddf3b2f8f711d1c455b",
 	username: "johannesPhil",
 };
 
@@ -58,6 +59,7 @@ fetchBio(`
 		img[i].src = user.avatarUrl;
 	}
 	name.innerText = user.name;
+	mobileUsername.innerText = user.login;
 	userName.innerText = user.login;
 	bio.innerText = user.bio;
 });
