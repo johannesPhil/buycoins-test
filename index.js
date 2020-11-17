@@ -5,11 +5,12 @@ let img = document.getElementsByTagName("img"),
 	bars = document.querySelector(".mobile-menu"),
 	closeMenu = document.querySelector(".mobile-menu-c"),
 	mobileMenu = document.querySelector(".mobile-links-container"),
-	mobileUsername = document.querySelector(".username"),
+	smProfile = document.querySelectorAll(".username"),
 	linkHolder = document.querySelectorAll(".link-holder"),
 	repos = document.querySelector(".profile__repositories");
 
-console.log(mobileMenu, linkHolder);
+/* Controls for Mobile navigation bar */
+
 bars.addEventListener("click", () => {
 	mobileMenu.style.display = "block";
 	bars.style.display = "none";
@@ -22,11 +23,14 @@ closeMenu.addEventListener("click", () => {
 	closeMenu.style.display = "none";
 });
 
+/* Github Authentication. Keeps getting revoked though  */
+
 const githubData = {
-	token1: "387090f7cfc221a015ceff8b8636dbb26035044b",
-	token2: "fd7f88bb20bd508c78fa2ddf3b2f8f711d1c455b",
+	token: "387090f7cfc221a015ceff8b8636dbb26035044b",
 	username: "johannesPhil",
 };
+
+/* Color codes for repo main language */
 
 const languageColor = [
 	{ lang: "PHP", color: "#4F5D95" },
@@ -41,7 +45,7 @@ const languageColor = [
 
 const headers = {
 	// "Content-Type": "application/json",
-	Authorization: "bearer " + githubData.token2,
+	Authorization: "bearer " + githubData.token,
 };
 
 fetchBio(`
@@ -59,7 +63,11 @@ fetchBio(`
 		img[i].src = user.avatarUrl;
 	}
 	name.innerText = user.name;
-	mobileUsername.innerText = user.login;
+
+	for (i = 0; i < smProfile.length; i++) {
+		smProfile[i].innerText = user.login;
+	}
+
 	userName.innerText = user.login;
 	bio.innerText = user.bio;
 });
@@ -160,14 +168,18 @@ async function fetchBio(query) {
 }
 
 async function fetchRepo(query) {
-	let result = fetch(`https://api.github.com/graphql`, {
-		method: "post",
-		headers: headers,
-		body: JSON.stringify({
-			query: query,
-		}),
-	});
-	return (await result).json();
+	try {
+		let result = fetch(`https://api.github.com/graphql`, {
+			method: "post",
+			headers: headers,
+			body: JSON.stringify({
+				query: query,
+			}),
+		});
+		return (await result).json();
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 function convertTime(unix) {
@@ -217,3 +229,34 @@ function convertTime(unix) {
 		return full;
 	}
 }
+
+window.addEventListener("scroll", () => {
+	let navBar = document.querySelectorAll(".stick");
+	navBar.forEach((nav) => {
+		let navTop = nav.offsetTop;
+		console.log(navTop);
+		if (window.pageYOffset > navTop) {
+			nav.classList.add("sticky-nav");
+		} else {
+			nav.classList.remove("sticky-nav");
+		}
+	});
+
+	let miniProfile = document.querySelector(".navProfile");
+
+	bioImg = document.querySelector(".bio__name");
+
+	if (window.pageYOffset > bioImg.offsetTop) {
+		miniProfile.style.display = "flex";
+		miniProfile.style.alignItems = "center";
+	} else {
+		miniProfile.style.display = "none";
+	}
+});
+
+// let navTop = navBar.offsetTop;
+// if (window.pageYOffset > navTop) {
+// 	navBar.classList.add("sticky-nav");
+// } else {
+// 	navBar.classList.remove("stick-nav");
+// }
